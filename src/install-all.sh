@@ -1,3 +1,5 @@
 #! /bin/bash
 
-run-parts /scripts/tools
+for f in /scripts/tools/*.sh; do
+    /bin/bash "$f" || break
+done
