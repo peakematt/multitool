@@ -1,6 +1,8 @@
 FROM ubuntu:22.04
 
 # Install packages from apt and pip
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=America/New_York
 RUN echo "**** Installing from apt and pip ****" && \
     apt-get update -y && apt-get install -y \
     vim \
