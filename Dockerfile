@@ -27,8 +27,8 @@ RUN echo "**** Installing from apt ****" && \
     openssl \
     git 
 
-RUN useradd --system --create-home --home-dir /home/ubuntu --shell /bin/bash --gid root --groups sudo --uid 10001 --password "$(openssl passwd -1 ubuntu)" ubuntu 
-RUN RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN useradd --system --create-home --home-dir /home/ubuntu --shell /bin/bash --gid root --groups sudo --uid 10001 --password "$(openssl passwd -1 ubuntu)" ubuntu && \
+    echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Run install scripts for various tools
 COPY src/ /scripts
