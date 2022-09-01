@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 # Install packages from apt and pip
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/New_York
-RUN echo "**** Installing from apt and pip ****" && \
+RUN echo "**** Installing from apt ****" && \
     apt-get update -y && apt-get install -y \
     vim \
     emacs \
@@ -23,14 +23,7 @@ RUN echo "**** Installing from apt and pip ****" && \
     wget \
     sudo \
     openssl \
-    git \ 
-    && \
-    pip3 install \
-    requests \
-    boto3 \
-    pandas \
-    numpy \
-    jupyter
+    git 
 
 RUN useradd --system --create-home --home-dir /home/ubuntu --shell /bin/bash --gid root --groups sudo --uid 10001 --password "$(openssl passwd -1 ubuntu)" ubuntu 
 
