@@ -1,4 +1,6 @@
 FROM ubuntu:22.04
+LABEL org.opencontainers.image.source = "https://github.com/matthewboehlke/multitool"
+
 
 # Install packages from apt and pip
 ARG DEBIAN_FRONTEND=noninteractive
