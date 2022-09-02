@@ -16,6 +16,7 @@ steampipe plugin install docker
 steampipe plugin install github
 steampipe plugin install jira
 steampipe plugin install net
+steampipe plugin install aws
 
 
 cd /home/ubuntu
