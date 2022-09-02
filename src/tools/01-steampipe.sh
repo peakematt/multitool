@@ -17,15 +17,22 @@ steampipe plugin install github
 steampipe plugin install jira
 steampipe plugin install net
 
+
 cd /home/ubuntu
 mkdir steampipe-mods && cd steampipe-mods
-git clone https://github.com/turbot/steampipe-mod-aws-compliance.git
-git clone https://github.com/turbot/steampipe-mod-terraform-aws-compliance.git
-git clone https://github.com/turbot/steampipe-mod-kubernetes-compliance.git
-git clone https://github.com/turbot/steampipe-mod-aws-insights.git
-git clone https://github.com/turbot/steampipe-mod-aws-thrifty.git
-git clone https://github.com/turbot/steampipe-mod-aws-perimeter.git
-git clone https://github.com/turbot/steampipe-mod-net-insights.git
-git clone https://github.com/turbot/steampipe-mod-aws-tags.git
+steampipe mod install github.com/turbot/steampipe-mod-aws-compliance
+steampipe mod install github.com/turbot/steampipe-mod-terraform-aws-compliance
+steampipe mod install github.com/turbot/steampipe-mod-kubernetes-compliance
+steampipe mod install github.com/turbot/steampipe-mod-aws-insights
+steampipe mod install github.com/turbot/steampipe-mod-aws-thrifty
+steampipe mod install github.com/turbot/steampipe-mod-aws-perimeter
+steampipe mod install github.com/turbot/steampipe-mod-net-insights
+steampipe mod install github.com/turbot/steampipe-mod-aws-tags
+
+
+steampipe completion bash > /tmp/steampipe-completion
+sudo mv /tmp/steampipe-completion /etc/bash_completion.d/steampipe
+rm /tmp/steampipe-completion
 
 chown -R ubuntu /home/ubuntu
+
