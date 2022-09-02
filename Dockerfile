@@ -25,7 +25,8 @@ RUN echo "**** Installing from apt ****" && \
     wget \
     sudo \
     openssl \
-    git 
+    git \
+    gpg
 
 RUN useradd --system --create-home --home-dir /home/ubuntu --shell /bin/bash --gid root --groups sudo --uid 10001 --password "$(openssl passwd -1 ubuntu)" ubuntu && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
