@@ -1,8 +1,14 @@
 name: Build and Deploy Docker
 on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: "Test"
+        required: false
+        type: boolean
   push:
     branches: [ main ]
-  workflow_dispatch 
+  
 
 jobs:
   Deploy:
